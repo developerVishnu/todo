@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern TODO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="todo-card" aria-labelledby="app-title">
+      <header class="card-header">
+        <div>
+          <h1 id="app-title">Tasks</h1>
+          <p class="subtitle">Plan clearly. Ship consistently.</p>
+        </div>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true">☀</span>
+          <span class="theme-label">Light</span>
+        </button>
+      </header>
+
+      <section class="input-section" aria-label="Add a task">
+        <label for="taskInput" class="sr-only">Add a new task</label>
+        <input
+          id="taskInput"
+          class="task-input"
+          type="text"
+          placeholder="Add a task and press Enter"
+          maxlength="180"
+          autocomplete="off"
+        />
+        <button id="addTaskBtn" class="add-btn" type="button">Add Task</button>
+      </section>
+
+      <section class="toolbar" aria-label="Filter tasks">
+        <div class="filter-group" role="tablist" aria-label="Task filters">
+          <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="active" role="tab" aria-selected="false">Active</button>
+          <button class="filter-btn" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+        </div>
+
+        <div class="task-meta">
+          <p id="taskCount" aria-live="polite">0 tasks</p>
+          <button id="clearCompletedBtn" class="clear-btn" type="button">Clear Completed</button>
+        </div>
+      </section>
+
+      <section aria-label="Task list" class="list-section">
+        <p id="emptyState" class="empty-state">No tasks yet. Add your first one.</p>
+        <ul id="taskList" class="task-list"></ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
